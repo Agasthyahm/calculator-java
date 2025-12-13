@@ -25,14 +25,15 @@ pipeline{
                     waitForQualityGate abortPipeline: true
                 }
             }
+                  post{
+                    success{
+                           echo "Quality Gate Passed"
+                        }
+                   failure{
+                           echo "Quality Gate Failed"
+                     }
+                }
+            }
         }
     }
-    post{
-        success{
-            echo "Quality Gate Passed"
-        }
-        failure{
-            echo "Quality Gate Failed"
-        }
-    }
-}
+  
