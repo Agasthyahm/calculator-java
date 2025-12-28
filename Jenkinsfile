@@ -42,7 +42,7 @@ pipeline{
         stage('Nexus-artifactory'){
             steps{
                 nexusArtifactUploader artifacts: [[artifactId: 'calculator-java', classifier: '', file: 'target/calculator-java-1.0-SNAPSHOT.jar', type: 'jar']],
-                    credentialsId: 'nexus-cred', groupId: 'com.example', nexusUrl: '16.16.128.84:30003', nexusVersion: 'nexus3', protocol: 
+                    credentialsId: 'nexus-cred', groupId: 'com.example', nexusUrl: '16.16.78.48:30003', nexusVersion: 'nexus3', protocol: 
                     'http', repository: 'maven-snapshots', version: '1.0-SNAPSHOT'
             }
         }
